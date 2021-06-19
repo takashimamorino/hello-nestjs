@@ -10,3 +10,13 @@ export class AppController {
     return this.appService.getHello();
   }
 }
+
+@Controller('num')
+export class NumController {
+  constructor(private readonly appService: AppService) {}
+
+  @Get()
+  getNum(): number {
+    return this.appService.getNum();
+  }
+}
