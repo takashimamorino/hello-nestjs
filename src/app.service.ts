@@ -10,3 +10,16 @@ export class AppService {
     return 1;
   }
 }
+
+@Injectable()
+export class HogeService {
+  private readonly list: string[] = [];
+
+  create(item: string) {
+    this.list.push(item);
+  }
+
+  findAll(): string[] {
+    return this.list;
+  }
+}
