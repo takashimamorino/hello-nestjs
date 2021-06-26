@@ -1,9 +1,9 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
-import { AppService, HogeService } from './app.service';
+import { ServiceInterface } from './app.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: ServiceInterface['appService']) {}
 
   @Get()
   getHello(): string {
@@ -13,7 +13,7 @@ export class AppController {
 
 @Controller('num')
 export class NumController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: ServiceInterface['appService']) {}
 
   @Get()
   getNum(): number {
@@ -23,7 +23,7 @@ export class NumController {
 
 @Controller('hoge')
 export class HogeController {
-  constructor(private readonly hogeService: HogeService) {}
+  constructor(private readonly hogeService: ServiceInterface['hogeService']) {}
 
   @Post()
   async create(@Body() item: string) {

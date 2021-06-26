@@ -1,5 +1,10 @@
 import { Injectable } from '@nestjs/common';
 
+export interface ServiceInterface {
+  appService: AppService;
+  hogeService: HogeService;
+}
+
 @Injectable()
 export class AppService {
   getHello(): string {
